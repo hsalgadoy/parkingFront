@@ -1,0 +1,33 @@
+header {
+    background: #1794FC;
+
+    .logo {
+        font-weight: bold;
+    }
+
+    nav {
+        justify-self: right;
+    
+        ul {
+            list-style-type: none;
+            margin: 0; padding: 0;
+
+            li {
+                float: left;
+                color: azure;
+                a {
+                    padding: 1.5em;
+                    text-transform: uppercase;
+                    font-size: .8em;
+
+                    &:hover {
+                        border-radius: 4px;
+                        background: #198DF4;
+                        color: #303AFD;
+                    }
+                }
+            }
+        }
+    }
+}
+

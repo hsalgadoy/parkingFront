@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>INGRESO VEHICULO</h1>
+    <form>
+      <div class="form-group">
+        <label for="licence">PLACA</label>
+        <input type="text" class="form-control" id="licence" required>
+      </div>
+ 
+      <div class="form-group">
+        <label for="displacement">CILINDRAJE</label>
+        <input type="number" class="form-control" id="displacement">
+      </div>
+      <div class="form-group">
+        <label for="displacement">TIPO VEHICULO</label>
+        <select id="country" name="country">
+            <option *ngFor="let item of vehicletype" value="{{item.idVehicleType}}">{{item.description}}</option>
+        </select>
+      </div>
+
+      <input type="submit" value="Submit">
+ 
+    </form>
+</div>

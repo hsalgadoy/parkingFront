@@ -3,16 +3,31 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { EntryvehicleComponent } from './entryvehicle/entryvehicle.component';
+import { OutvehicleComponent } from './outvehicle/outvehicle.component';
+import { ListparkingComponent } from './listparking/listparking.component';
+import { NavComponent } from './nav/nav.component';
+import { HttpClientModule } from '@angular/common/http';
+import {TypeserviceService} from './services/typeservice.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EntryvehicleComponent,
+    OutvehicleComponent,
+    ListparkingComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    TypeserviceService
+
+  ],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }
