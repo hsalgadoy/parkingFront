@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
+import { VehicleType } from '../domain/vehicle-type';
 
 const httpOptions = {
   headers: new HttpHeaders({

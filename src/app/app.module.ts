@@ -9,6 +9,9 @@ import { ListparkingComponent } from './listparking/listparking.component';
 import { NavComponent } from './nav/nav.component';
 import { HttpClientModule } from '@angular/common/http';
 import {TypeserviceService} from './services/typeservice.service';
+import {VehicleService} from './services/vehicle.service';
+import {ParkingTicketService} from './services/parking-ticket.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,11 +24,14 @@ import {TypeserviceService} from './services/typeservice.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
-    TypeserviceService
-
+    TypeserviceService,
+    VehicleService,
+    ParkingTicketService
+    
   ],
   bootstrap: [AppComponent]
 
