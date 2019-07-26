@@ -1,7 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Vehicle } from '../domain/vehicle';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +20,8 @@ url="http://localhost:8085/ceibaparking/api/vehicle";
   registerVechicle(vehicle: Vehicle){
     return this.http.post<Vehicle>(this.url+'/entry',vehicle);
   }
-  getVehicle(plate: String){
-    return this.http.get('http://localhost:8085/ceibaparking/api/vehicle'+plate)
+  getVehicle(plate: String): any{
+      return this.http.get('http://localhost:8085/ceibaparking/api/vehicle',httpOptions);
   }
 
 }

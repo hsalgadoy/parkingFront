@@ -34,16 +34,20 @@ tycket: ParkingTicket;
   }
 
   getVehicle(plate: string){
-    this.vehicleservice.getVehicle(plate);
+    this.vehicleservice.getVehicle(plate).toPromise().then((response: any)=>(console.log(JSON.parse(response))));
+   
   }
 
   registryVehicle(){
     this.vehicleservice.registerVechicle(this.vehicle).subscribe(
-      data=>{
+      data=>{         
         this.vehicle=data;
-        alert('Vehiculo ingresado con exito. ')
+        alert('Vehiculo ingresado con exito. ');     
+        console.log(this.vehicle)   
       })
-      console.log(this.getVehicle(this.vehicle.licensePlate)+"here must be the plate");
-  }
-
+     this.vehicle = new Vehicle();
+     console.log(this.vehicle);
+     //this.getVehicle('PND02D');
+           
+    }
 }
