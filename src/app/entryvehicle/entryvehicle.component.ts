@@ -7,13 +7,6 @@ import { VehicleService } from '../services/vehicle.service';
 import { ParkingTicketService } from '../services/parking-ticket.service';
 
 
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json'
-  })
-};
-
 @Component({
   selector: 'app-entryvehicle',
   templateUrl: './entryvehicle.component.html',
@@ -21,7 +14,7 @@ const httpOptions = {
 })
 export class EntryvehicleComponent implements OnInit {
 vehicle: Vehicle = new Vehicle();
-tycket: ParkingTicket;
+ticket: ParkingTicket = new ParkingTicket();
 
   vehicletype: [];
   constructor(private typeservice: TypeserviceService,
@@ -38,16 +31,14 @@ tycket: ParkingTicket;
    
   }
 
+
+
   registryVehicle(){
-    this.vehicleservice.registerVechicle(this.vehicle).subscribe(
+    this.ticketservice.entryVehicle(this.vehicle).subscribe(
       data=>{         
-        this.vehicle=data;
-        alert('Vehiculo ingresado con exito. ');     
-        console.log(this.vehicle)   
-      })
-     this.vehicle = new Vehicle();
-     console.log(this.vehicle);
-     //this.getVehicle('PND02D');
-           
+        this.ticket=data;
+        alert('Vehiculo ingresado con exito.');     
+      });     
     }
+    
 }

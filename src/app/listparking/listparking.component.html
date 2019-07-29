@@ -1,1 +1,25 @@
-<p>listparking works!</p>
+<div class="container">
+<h1>LISTA PARQUEO VEHICULO</h1>
+<div class="body">
+    <table id="tickets">
+      <thead>
+        <tr>
+          <th>Tipo</th>
+          <th>Placa</th>
+          <th>Fecha Entrada</th>
+          <th>Genera Salida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ticket of parkingcars" >
+          <td>{{ ticket.vehicle.vehicleType }}</td>
+          <td>{{ ticket.vehicle.licensePlate }}</td>
+          <td>{{ ticket.inTimeDate| date:'medium'}}</td>
+          <td>
+            <button (click)="registrarSalidaEstacionamiento(ticket.vehiculo.vehiculoPlaca)" class="btn btn-warning">Generar Salida</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

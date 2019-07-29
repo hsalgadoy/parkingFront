@@ -59,7 +59,7 @@ select {
     }
 }
 
-input[type=button], input[type=submit], input[type=reset] {
+button {
     background-color: #4592FA;
     border: none;
     color: white;
@@ -75,3 +75,27 @@ input[type=button], input[type=submit], input[type=reset] {
   input[type=submit]:hover {
     background-color: #45a049;
   }
+
+  #tickets {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    td{
+        order: 1px solid #ddd;
+        padding: 8px;
+    }
+    th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4592FA;
+    color: white;
+    }
+    tr:nth-child(even){background-color: #4592FA;}
+    tr:hover {background-color: #ddd;}
+  }
+  
+ 
+  

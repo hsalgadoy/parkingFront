@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ParkingTicketService } from '../services/parking-ticket.service';
+import { JsonPipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-listparking',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listparking.component.scss']
 })
 export class ListparkingComponent implements OnInit {
+  
 
-  constructor() { }
+  parkingcars: [];
+  constructor(private parkingservice: ParkingTicketService) { 
+    
+  }
 
   ngOnInit() {
+    this.parkingservice.getTickets().toPromise().then((response: any)=>(this.parkingcars=response))
   }
+
 
 }

@@ -19,7 +19,7 @@ export class ParkingTicketService {
   url="http://localhost:8085/ceibaparking//api/parking";
   constructor(private http: HttpClient) {   }
 
-  entryVehicle(vehicle: Vehicle){
+  entryVehicle(vehicle: Vehicle): any{
     return this.http.post<Vehicle>(this.url+'/invehicle',vehicle);
   }
 
