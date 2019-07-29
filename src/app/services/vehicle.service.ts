@@ -21,7 +21,7 @@ url="http://localhost:8085/ceibaparking/api/vehicle";
     return this.http.post<Vehicle>(this.url+'/entry',vehicle);
   }
   getVehicle(plate: String): any{
-      return this.http.get('http://localhost:8085/ceibaparking/api/vehicle',httpOptions);
+      return this.http.get(this.url+'/get/'+plate,httpOptions);
   }
 
 }
