@@ -8,7 +8,7 @@ const routes: Routes = [
 
 {path: 'entry', component: EntryvehicleComponent},
 {path: 'list', component: ListparkingComponent},
-{path: 'out', component: OutvehicleComponent}
+{path: 'out/:id', component: OutvehicleComponent}
 
 ];
 

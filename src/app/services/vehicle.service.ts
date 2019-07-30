@@ -16,7 +16,7 @@ const httpOptions = {
 export class VehicleService {
 url="http://localhost:8085/ceibaparking/api/vehicle";
   constructor(private http: HttpClient) { }
-
+s
   registerVechicle(vehicle: Vehicle){
     return this.http.post<Vehicle>(this.url+'/entry',vehicle);
   }

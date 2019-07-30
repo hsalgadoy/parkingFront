@@ -16,7 +16,7 @@
           <td>{{ ticket.vehicle.licensePlate }}</td>
           <td>{{ ticket.inTimeDate| date:'medium'}}</td>
           <td>
-            <button (click)="registrarSalidaEstacionamiento(ticket.vehiculo.vehiculoPlaca)" class="btn btn-warning">Generar Salida</button>
+            <button (click)="getoutvehicle(ticket.vehicle.licensePlate)" class="btn btn-warning">Generar Salida</button>
           </td>
         </tr>
       </tbody>

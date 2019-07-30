@@ -1,1 +1,26 @@
-<p>outvehicle works!</p>
+<div class="container">
+    <div>
+        <h1>SALIDA PARA EL VEHICULO </h1>
+        <h3>{{plate}}</h3>
+    </div>
+    <form>
+        <div class="form-group">
+            <label>PLACA</label>
+            <h5>{{ticket.vehicle.licensePlate}}</h5>
+        </div>
+
+        <div class="form-group">
+            <label>FECHA ENTRADA </label>
+            <h5>{{ticket.inTimeDate| date:'medium'}}</h5>
+        </div>
+        <div class="form-group">
+            <label>FECHA SALIDA </label>
+            <h5>{{ticket.outTimeDate| date:'medium'}}</h5>
+        </div>
+        <div class="form-group">
+            <label>VALOR SERVICIO </label>
+            <h5>{{ticket.grossTotal}}</h5>
+        </div>
+
+    </form>
+</div>
