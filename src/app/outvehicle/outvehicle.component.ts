@@ -15,15 +15,17 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class OutvehicleComponent implements OnInit {
   plate: string;
-  ticket: ParkingTicket;
-  constructor(private route: ActivatedRoute, private ticketservice:ParkingTicketService) { }
+  ticket: ParkingTicket= new ParkingTicket();
+  
+  constructor(private route: ActivatedRoute, private ticketservice:ParkingTicketService) { 
+    this.ticket.vehicle= new Vehicle();
+  }
 
   ngOnInit() {
     this.plate= this.route.snapshot.params['id'];
     this.ticketservice.outvehicle(this.plate).subscribe(
       data=>{
         this.ticket=data;
-        console.log(this.ticket);
       }
     );
   }

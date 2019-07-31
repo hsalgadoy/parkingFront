@@ -12,7 +12,6 @@ export class VehicleType {
 	
 	spaceAviable: number;
 	
-	DisplacementCost: number;
-
+	displacementCost: number;
 
 }

@@ -16,7 +16,7 @@ const httpOption={
   providedIn: 'root'
 })
 export class ParkingTicketService {
-  url="http://localhost:8085/ceibaparking//api/parking";
+  url="http://localhost:8085/ceibaparking/api/parking";
   constructor(private http: HttpClient) {   }
 
   entryVehicle(vehicle: Vehicle): any{

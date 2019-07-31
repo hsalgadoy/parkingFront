@@ -26,12 +26,6 @@ ticket: ParkingTicket = new ParkingTicket();
     this.typeservice.getVehicleType().toPromise().then((response: any)=>(this.vehicletype=response))
   }
 
-  getVehicle(plate: string){
-    this.vehicleservice.getVehicle(plate).toPromise().then((response: any)=>(console.log(JSON.parse(response))));
-   
-  }
-
-
 
   registryVehicle(){
     this.ticketservice.entryVehicle(this.vehicle).subscribe(

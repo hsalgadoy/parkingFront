@@ -18,7 +18,13 @@ export class ListparkingComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.parkingservice.getTickets().toPromise().then((response: any)=>(this.parkingcars=response))
+    try {
+      this.parkingservice.getTickets().toPromise().then((response: any)=>(this.parkingcars=response));
+    } catch (error) {
+      console.log('> Error is handled: ');
+    }
+
+   
   }
 
   getoutvehicle(plate: string){

@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,7 @@ import {TypeserviceService} from './services/typeservice.service';
 import {VehicleService} from './services/vehicle.service';
 import {ParkingTicketService} from './services/parking-ticket.service';
 import {FormsModule} from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -25,15 +26,18 @@ import {FormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([])
   ],
   providers: [
+    HttpClientModule,
     TypeserviceService,
     VehicleService,
     ParkingTicketService
     
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 
 })
 export class AppModule { }

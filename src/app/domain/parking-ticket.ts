@@ -2,7 +2,7 @@ import { Vehicle } from './vehicle';
 
 export class ParkingTicket {
 
-    TicketNumber: number;
+    ticketNumber: number;
 
     vehicle: Vehicle;
 
@@ -11,4 +11,5 @@ export class ParkingTicket {
     outTimeDate: Date;
 
     grossTotal: number;
+    displacementCost: number;
 }
